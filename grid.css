@@ -1,0 +1,265 @@
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0;
+}
+
+ 
+.parant {
+  display: grid;
+  grid-template-areas: 'left right right right'  
+                       'left right right right' 
+                       'left right right right' ;
+  grid-template-columns: 1fr 3fr ; /* Four columns */
+  gap: 5px;
+  background-color:  hsl(0, 0%, 100%);
+  padding: 15px;
+  max-width: 1440px;
+  margin: auto;
+  
+}
+.child1 {
+  display: grid;
+  grid-area: left;
+  grid-template-rows:   repeat(2, 1.5fr);
+  grid-template-columns: 1fr; /* Four columns */
+  gap: 35px;
+  background-color: hsl(0, 0%, 100%);
+  padding: 15px;
+
+  
+}
+
+.child2 {
+  display: grid;
+  grid-area: right;
+  grid-template-rows:   repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Four columns */
+  gap: 35px;
+  background-color:  hsl(0, 0%, 100%);
+  padding: 15px;
+  
+}
+.grid-item {
+  
+  border-radius: 9px;
+  font-size: 38px;
+  font-family: 'DM Sans';
+  overflow: hidden;
+  font-weight: bold;
+  padding: 40px;
+  
+  
+}
+.item7{
+  grid-row: 1 ;
+  grid-column: 1;
+  background-color: hsl(31, 66%, 93%);
+  align-content: center; 
+  line-height: 45px;
+  letter-spacing: -3px;
+ 
+}
+.item8 {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: hsl(39, 100%, 71%);
+  align-content: center;
+  line-height: 45px;
+  letter-spacing: -3px;
+}
+.item1 {
+  grid-row: 1;
+  grid-column: 1 /  span 2;
+  background-color: hsl(256, 67%, 59%);
+  color: white;
+  align-content: center;
+  line-height: 70px;
+  
+}
+.item1 img {
+  width: 300px;
+  padding-bottom: 0;
+  margin-bottom: 0%;
+}
+.item2 {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid #ddd; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  line-height: 30px;
+}
+.item2 img{
+  width: 450px;
+}
+.item3 {
+  grid-row: 2;
+  grid-column: 2;
+  background-color: hsl(39, 100%, 71%);
+  padding: 20px 20px 0px 20px !important;
+  align-content: end;
+  line-height: 35px;
+}
+.item4 {
+  grid-row: 1 / 3;
+  grid-column: 3;
+  background-color: hsl(254, 88%, 90%);
+  line-height: 35px;
+
+ 
+}
+.item4 img{
+
+  width: 480px;
+}
+.item5 {
+  grid-row: 3;
+  grid-column: 2/ span 2 ;
+  background-color: hsl(256, 67%, 59%);
+  align-content: center;
+  color: white;
+  text-align: left;
+
+}
+.item5 img{
+  width: 45%;
+}
+.item6 {
+  grid-row: 3;
+  grid-column: 1;
+  background-color: hsl(0, 0%, 100%);
+  align-content: center;
+  border: 1px solid #ddd; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+.img-style2{
+  max-width: 100%;
+  height: auto; /* Keeps the aspect ratio */
+  border-radius: 9px; /* Match your item styles */
+}
+.overflow-container {
+  width: 100%;
+  height: 135px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Media query for smaller screens (375px) */
+@media screen and (max-width: 375px) {
+  body {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  /* Change the parent container to flexbox and stack items vertically */
+  .parant {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'right '
+    'left';
+    
+    gap: 15px; /* Space between items */
+    padding: 10px;
+    margin: auto;
+  }
+
+  /* Remove grid display from child containers to make items stack */
+  .child1, .child2 {
+    display: flex;
+    flex-direction: column; /* Stack child items vertically */
+    gap: 10px;
+  }
+
+  /* Ensure each item takes full width and displays in the correct order */
+  .item1 {
+    order: 1;
+    width: 100%;
+  }
+  .item2 {
+    order: 2;
+    width: 100%;
+    font-size: 30px !important;
+  }
+  .item3 {
+    order: 3;
+    width: 100%;
+    font-size: 30px !important;
+  }
+  .item4 {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }
+  .item5 {
+    order: 5;
+    width: 100%;
+    text-align: center;
+  }
+  .item6 {
+    order: 6;
+    width: 100%;
+  }
+  .item7 {
+    order: 7;
+    width: 100%;
+  }
+  .item8 {
+    order: 8;
+    width: 100%;
+  }
+
+  /* Ensure images are responsive */
+  .item1 img, .item2 img, .item3 img, .item4 img, .item5 img, .item6 img, .item7 img, .item8 img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust font sizes for smaller screens */
+  .p_font18 {
+    font-size: 19px !important;
+  } 
+  .p_font45 {
+    font-size: 30px !important;
+  }
+  .p_font50 {
+    font-size: 26px !important;
+  }
+  h1{
+    font-size: 40px !important;
+  }
+}
+
+
+
+
+
+
+/* Media query for larger screens (1440px) */
+@media screen and (min-width: 1440px) {
+  /* Your styles for 1440px screen can remain the same or be adjusted as needed */
+}
+.p_font18{
+  font-size: 22px;
+  font-weight: 500;
+}
+.p_font45{
+  font-size: 45px;
+}
+
+.p_font50{
+  font-size: 70px;
+}
+
+.img-style {
+ 
+  float: left;
+  
+  
+}
